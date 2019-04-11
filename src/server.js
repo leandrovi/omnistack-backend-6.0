@@ -44,7 +44,7 @@ app.use("/files", express.static(path.resolve(__dirname, "..", "tmp"))); // Redi
 // Usar arquivo de rotas separado:
 app.use(require("./routes")); // O "./" serve pra dizer que não é um node_modules
 
-server.listen(3333); // Trocar app por server permite a aplicação ouvir protocolos tanto http quanto web socket
+server.listen(process.env.PORT || 3333); // Trocar app por server permite a aplicação ouvir protocolos tanto http quanto web socket
 
 // Como definir rotas para receber informações em real time e também enviar ?
 // Basta utilizar io.on("connection", socket => ());
