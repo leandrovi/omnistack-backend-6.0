@@ -4,11 +4,12 @@ const mongoose = require("mongoose");
 const path = require("path");
 const cors = require("cors");
 
+// Variável da minha aplicação, que vai guardar todas as infos da aplicação
+const app = express();
+
 // Importante definir o cors antes de tudo
 app.use(cors()); // Basicamente, todo mundo pode acessar minha aplicação e consumir os recursos dela
 
-// Variável da minha aplicação, que vai guardar todas as infos da aplicação
-const app = express();
 const server = require("http").Server(app);
 const io = require("socket.io")(server); // o Socket.io retorna uma função, por isso já atribuimos em formato de função com server como parâmetro
 
